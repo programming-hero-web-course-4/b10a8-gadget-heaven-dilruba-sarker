@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import { FaRegStar, FaSquareFull } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { TbHeartShare, TbShoppingCart } from 'react-icons/tb';
+import { addToLs } from '../../Utility/AddToLs';
 
 const ProductDetails = () => {
     const data= useLoaderData()
@@ -11,9 +12,13 @@ const ProductDetails = () => {
     const product=data.find(product=>product.id==id)
     
       const {product:nam,image,name,price,stockStatus,
-        rating,
+        rating,id:newId,
         camera,description}=product
-    return (
+
+const handleAddtoCart=id=>{
+    addToLs(id)
+}
+        return (
         <div className='w-5xl mx-auto ' >
            <Header></Header>
 
@@ -48,13 +53,13 @@ const ProductDetails = () => {
 <h1 className='w-10  rounded-3xl shadow-3xl'>{rating}</h1>
 </div>
 
-<div className='flex items-center gap-4'>
-<button className="btn bg-purple-600 text-white rounded-3xl">
+<div  className='flex items-center gap-4'>
+<button onClick={()=>handleAddtoCart(newId)} className="btn bg-purple-600 text-white rounded-3xl">
   Add to Cart
   <TbShoppingCart />
  
 </button>
-<p className=' bg-blue-100  rounded-3xl shadow-5xl p-4  '><TbHeartShare /></p>
+<p onClick={()=>handleAddtoCart(newId)} className=' bg-blue-100  rounded-3xl shadow-5xl p-4  '><TbHeartShare /></p>
 </div>
 </div>
 
