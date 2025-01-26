@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 import AddToCart from "../AddToCart/AddToCart";
 import { getStoredData } from "../../Utility/AddToLs";
 import { TbSortDescending2 } from "react-icons/tb";
-
+import {Helmet} from "react-helmet";
 const Dashboard = () => {
   const allProductData = useLoaderData() || [];
   const [filteredProduct, setFilteredProduct] = useState([]);
@@ -42,6 +42,16 @@ const Dashboard = () => {
 
   return (
     <div>
+
+<div>
+           <Helmet>
+         <meta charset="utf-8" />
+   <title>/dashboard</title>
+   <meta name="description" content="This is home page" />
+        </Helmet>
+
+  </div>
+
       {/* Header with item count */}
       <Header data={filteredProduct.length} />
 
