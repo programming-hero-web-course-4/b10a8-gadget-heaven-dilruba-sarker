@@ -6,6 +6,7 @@ import AddToCart from "../AddToCart/AddToCart";
 import { getStoredData } from "../../Utility/AddToLs";
 import { TbSortDescending2 } from "react-icons/tb";
 import {Helmet} from "react-helmet";
+import png from "../../assets/Group.png"
 const Dashboard = () => {
   const allProductData = useLoaderData() || [];
   const [filteredProduct, setFilteredProduct] = useState([]);
@@ -126,6 +127,7 @@ const Dashboard = () => {
         <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
             <h2 className="text-xl font-bold mb-4">Purchase Summary</h2>
+             <h2><img src={png} alt="" /></h2>
             <p className="mb-4">Total Price: ${totalPrice.toFixed(2)}</p>
             <button
               className="bg-red-500 text-white px-4 py-2 rounded"

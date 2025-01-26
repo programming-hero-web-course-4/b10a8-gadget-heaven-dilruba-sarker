@@ -16,6 +16,7 @@ const Header = ({data }) => {
       <li>
         <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
+      <li><NavLink to='/login'>Log in</NavLink></li>
     </>
   );
 
@@ -54,14 +55,19 @@ const Header = ({data }) => {
       <div className="navbar-end flex gap-4 mr-8">
         <div className="p-2 rounded-4xl shadow-2xs bg-amber-50 text-black relative">
           <IoCartOutline />
-          {data> 0 && (
+          {/* {data> 0 && (
             <span className="absolute top-0 right-0 bg-red-500 text-white text-sm rounded-full px-1">
               {data}
             </span>
-          )}
+          )} */}
         </div>
         <div className="p-2 rounded-4xl shadow-2xs bg-amber-50 text-black">
           <CiHeart />
+          {/* {data> 0 && (
+            <span className="absolute top-0 right-0 bg-red-500 text-white text-sm rounded-full px-1">
+              {data}
+            </span>
+          )} */}
         </div>
       </div>
     </div>

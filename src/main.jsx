@@ -14,6 +14,7 @@ import Statistics from './Components/Statistics/Statistics.jsx';
 import Products from './Components/Products/Products.jsx';
 import Items from './Components/items/Items.jsx';
 import ProductDetails from './Components/Productetails/ProductDetails.jsx';
+import Login from './Components/Login/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,9 @@ const router = createBrowserRouter([
         path:'/products/:id',
        loader:()=>fetch("/data.json"),
        element:<ProductDetails></ProductDetails>
+      },{
+        path:"/login",
+        element:<Login></Login>
       }
     ],
   },
